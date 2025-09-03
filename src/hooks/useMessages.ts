@@ -37,9 +37,7 @@ export const useMessages = (
         sender_id: msg.sender_id,
         content: msg.message ? msg.message.replace(/"/g, "") : "",
         createdAt: msg.created_at,
-        imagePath: msg.image
-          ? `/imgs/${msg.image.replace(/\\/g, "/")}`
-          : undefined,
+        imagePath: msg.image ? `/${msg.image.replace(/\\/g, "/")}` : undefined,
         isRead: true,
       }));
 
