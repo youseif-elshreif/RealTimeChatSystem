@@ -38,7 +38,7 @@ export const useMessages = (
         content: msg.message ? msg.message.replace(/"/g, "") : "",
         createdAt: msg.created_at,
         imagePath: msg.image
-          ? `http://localhost:8000/${msg.image.replace(/\\/g, "/")}`
+          ? `/imgs/${msg.image.replace(/\\/g, "/")}`
           : undefined,
         isRead: true,
       }));
@@ -109,7 +109,7 @@ export const useMessages = (
           newMessage.createdAt ||
           new Date().toISOString(),
         imagePath: newMessage.image
-          ? `http://localhost:8000/${newMessage.image.replace(/\\/g, "/")}`
+          ? `/imgs/${newMessage.image.replace(/\\/g, "/")}`
           : image
           ? URL.createObjectURL(image)
           : undefined,
